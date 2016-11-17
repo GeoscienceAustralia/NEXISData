@@ -1,16 +1,19 @@
 language: node_js
+
 node_js:
-   - 4
-   - 5
-   - node
+  - 4
+  - 5
+  - node
 
 sudo: false
 
 branches:
-   only: master
+  only: master
 
 deploy:
-   skip_cleanup: true
-
-# script:
-# - npm run tests.all
+  provider: s3
+  bucket: "test-nexis-deploy"
+  region: ap-southeast-2
+  local_dir: app
+  secure: M6nLgWBVDd8u7Avw116pL2Ye0G3ckbG9g0gqEkzndsiw9jqAM8kZNgJ/tBYWpnfz9ZYrfFHY0D+VyBgTw7Dj9/gcLuNxtx8/4IGvnaJUj25aR5+pgEGZZ6EcQFNUi0AtYplu5OCPB/qpLgnv5LnTi2kdjbo5b+J4pr6R4CY7NQAmevQuDFCi9JP8sxpmVYRFuSxtV6x14zAEXU4QgGoyugrJgT9wnpk3uQKQvJ4LPICbqYNQuca+BW4254GtSy0DX42rV6GFd+TGYZZV45bAJx6FvO2Ude+0NiUZMoQIB/26V9ficfGQRW1SfG6T5uURSTEpppY2A5+0e8/PfuMYiOx4Mh10ngd5OA84ZItl48Cf8yK4MdBI3DVicLBuoLf4Pns83pbMEIn8z2eChliBtlIEeoaZ47ivtHuljWUn2lDO++GQBmymgRhpxb5OtTrGC4oxoVbDhNG4O/UbaYA9wJxbo3rObtPAiH1oSZu33ro/fre1wsUpkPFC0Zeay2MqSqAIXehKSxDoLBAuqbljdtEBk6UVCjRD0L2k2cSwAfvA3cR4cJDtjakuWN0Dho55Va3lX70UoX2SFRD9aDXbDII1aON7vZUM7UYQMVoXt/AmVCdCabIe250fOI6pseTPmckZx/p/7wW+9EtRg1Jezt2ZF4tN449z/M22+Cp0/lA=
+  skip_cleanup: true
