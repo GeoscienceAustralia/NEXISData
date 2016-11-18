@@ -23,7 +23,7 @@ deploy:
   skip_cleanup: true
 
 script:
-  - npm run tests.all
+  - npm test
 
 env:
   global:
