@@ -1,0 +1,8 @@
+{
+  "name": "nexis-data",
+  "description": "The NEXIS web interface. This web interface allows users to download NEXIS data within a boundary specified by through a web interface.",
+  "keywords": ["nexis", "data", "buildings", "exposure"],
+  "dependencies": [],
+  "repository": {"type": "git", "url": "https://github.com/GeoscienceAustralia/NEXISData"},
+  "version": "0.0.1"
+}
