@@ -804,6 +804,7 @@
     cursor:pointer;
 }
 
+/*
 .ga_sidemapswitch
 {
     margin-bottom:0px;
@@ -820,7 +821,7 @@
     border-top:1px solid transparent;
     border-bottom:1px solid #f0f0f0;
 }
-
+*/
 .ga_sidemapswitch:hover
 {
     background-color:white;
@@ -828,6 +829,7 @@
     text-decoration: underline;
 }
 
+/*
 .ga_sidemapswitch_on
 {
     margin-bottom:0px;
@@ -844,6 +846,7 @@
     border-bottom:1px solid #f0f0f0;
     clear:both;
 }
+*/
 
 .ga_sidemapswitch_on:hover
 {
@@ -1065,6 +1068,8 @@
     width: auto;
     z-index: 10;
 }
+
+/*
 .ga_headerPane #nav li {
     background-image: url(../images/ga.header.crumbs.png);
     background-position: right center;
@@ -1075,6 +1080,7 @@
     margin: 0;
     padding: 0 18px 0 0;
 }
+
 .ga_headerPane #nav li a {
     color: #FFFFFF;
     display: block;
@@ -1084,6 +1090,7 @@
     padding: 0px 0px !important;
     background-image: url(../images/black_20.png);background-repeat:repeat;
 }
+*/
 
 .ga_indent
 {
@@ -1377,6 +1384,8 @@
     background: black;
     border: 2px solid white;
 }
+
+/*
 .ui-tooltip {
     padding: 10px 20px ! important;
     color: white ! important;
@@ -1385,6 +1394,7 @@
     background-color:black ! important;
     text-align:left ! important;
 }
+*/
 .arrow {
     width: 70px;
     height: 16px;

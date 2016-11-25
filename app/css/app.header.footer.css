@@ -164,11 +164,13 @@ img.logo-stacked {
 	margin-left: 184px;
 }
 
+/*
 .breadcrumbs li a,.breadcrumbs li.last {
 	float: left;
 	padding-right: 0;
 	background: url(images/vertical-breadcrumb.gif) no-repeat right;
 }
+*/
 
 .breadcrumbs li a {
 	color: #006983;
@@ -386,7 +388,7 @@ img.logo-stacked {
 }
 
 
-
+/*
 @media screen and (max-width: 768px) {
 	.ga-footer-sm li a,
 	.ga-footer-sm {
@@ -398,3 +400,4 @@ img.logo-stacked {
 		display: compact;
 	}
 }
+*/
