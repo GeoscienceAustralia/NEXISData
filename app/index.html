@@ -3,13 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <title>Hello World</title>
-    <link rel="stylesheet" href="/css/app.header.footer.css"/>
-    <link rel="stylesheet" href="/css/ga.css"/>
+    <link rel="stylesheet" href="./css/app.header.footer.css"/>
+    <link rel="stylesheet" href="./css/ga.css"/>
 </head>
 <body>
     <h1>Hello World</h1>
-    <p>
-        I've been deployed automatically from Travis CI.
-    </p>
+
+    <div style="padding-left:20px; padding-right: 20px">
+        <p>
+            I've been deployed automatically from Travis CI.
+        </p>
+        <form name="fileUploadForm">
+            <div class="row">
+                <div class="span6">
+                    <input id="shapefile"
+                           type="file"
+                           accept=".zip, application/zip, application/octet-stream"
+                           required
+                           ng-pattern="/^(.*\.(?!(zip)$))?[^.]*$/i">
+                </div>
+            </div>
+            <div class="row">
+                <div class="span5 offset11">
+                    <button id="runButton"
+                            type="submit"
+                            ng-disabled="fileUploadForm.$invalid">Run</button>
+                </div>
+        </div>
+        </form>
+    </div>
 </body>
 </html>
