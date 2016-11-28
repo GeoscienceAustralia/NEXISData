@@ -1454,6 +1454,22 @@
     font-weight: bold;
 }
 
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    background-color: #006983;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: left;
+    text-decoration: none;
+    font-size: 13px;
+    font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+    font-weight: bold;
+}
+
 @media (max-width: 600px) {
     .hide-small {
         display: none;

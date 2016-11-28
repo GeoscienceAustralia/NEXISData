@@ -3,33 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title>Hello World</title>
-    <link rel="stylesheet" href="./css/app.header.footer.css" type="text/css"/>
-    <link rel="stylesheet" href="./css/ga.css" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="css/app.header.footer.css" />
+    <link rel="stylesheet" type="text/css" href="css/ga.css" />
 </head>
 <body>
-    <h1>Hello World</h1>
+    <h1 class="ga-header">Hello World</h1>
 
     <div style="padding-left:20px; padding-right: 20px">
         <p>
             I've been deployed automatically from Travis CI.
         </p>
         <form name="fileUploadForm">
-            <div class="row">
+            <div class="r">
                 <div class="span6">
-                    <input id="shapefile"
-                           type="file"
-                           accept=".zip, application/zip, application/octet-stream"
-                           required
-                           ng-pattern="/^(.*\.(?!(zip)$))?[^.]*$/i">
+                    <label for="shapefile" class="custom-file-upload">
+                        <input id="shapefile"
+                               type="file"
+                               accept=".zip, application/zip, application/octet-stream"
+                               required
+                               ng-pattern="/^(.*\.(?!(zip)$))?[^.]*$/i">
+                        Select zipped shapefile
+                    </label>
                 </div>
             </div>
             <div class="row">
                 <div class="span5 offset11">
-                    <button id="runButton"
+                    <button class="button"
+                            id="runButton"
                             type="submit"
                             ng-disabled="fileUploadForm.$invalid">Run</button>
                 </div>
-        </div>
+            </div>
         </form>
     </div>
 </body>

@@ -1,3 +1,2 @@
 # Ignore certain folders.
 .idea/*
-node_modules/*
