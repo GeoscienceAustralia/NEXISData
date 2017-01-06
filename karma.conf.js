@@ -16,6 +16,7 @@ module.exports = function(config) {
         'node_modules/angular/angular.js',
         'node_modules/angular/angular-*.js',
         'app/**/*.js',
+        'app/**/*.html',
         'test/**/*.js'
     ],
 
