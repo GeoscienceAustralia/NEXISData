@@ -10,6 +10,11 @@ module.exports = function(config) {
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
     frameworks: ['jasmine'],
 
+    /*
+    plugins:[
+        'karma-ng-html2js-preprocessor'
+    ],
+    */
 
     // list of files / patterns to load in the browser
     files: [
@@ -17,7 +22,7 @@ module.exports = function(config) {
         'node_modules/angular/angular-*.js',
         'app/**/*.js',
         'app/**/*.html',
-        'test/**/*.js'
+        'test/**/*.js' // need to tell Karma to load the html files here for directives.
     ],
 
 
@@ -29,6 +34,7 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+        '**/*html': 'ng-html2js'
     },
 
 
