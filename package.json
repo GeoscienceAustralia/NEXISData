@@ -1,18 +1,27 @@
 {
   "name": "nexis-data",
   "description": "The NEXIS web interface. This web interface allows users to download NEXIS data within a boundary specified by through a web interface.",
-  "keywords": ["nexis", "data", "buildings", "exposure"],
+  "keywords": [
+    "nexis",
+    "data",
+    "buildings",
+    "exposure"
+  ],
   "dependencies": {
     "angular": "1.5.8"
   },
   "devDependencies": {
+    "jasmine": "^2.5.3",
+    "jasmine-core": "^2.0.0",
     "karma": "^0.13.22",
     "karma-chrome-launcher": "^1.0.1",
     "karma-firefox-launcher": "^0.1.6",
-    "karma-jasmine": "^1.0.2",
-    "karma-ng-html2js-preprocessor": "^0.2.0",
-    "jasmine-core": "^2.0.0"
+    "karma-jasmine": "^1.1.0",
+    "karma-ng-html2js-preprocessor": "^1.0.0"
   },
-  "repository": {"type": "git", "url": "https://github.com/GeoscienceAustralia/NEXISData"},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GeoscienceAustralia/NEXISData"
+  },
   "version": "0.0.1"
 }

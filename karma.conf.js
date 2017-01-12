@@ -18,8 +18,8 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-        'node_modules/angular/angular.js',
-        'node_modules/angular/angular-*.js',
+        'app/lib/angular/angular.js',
+        'app/lib/angular/angular-*.js',
         'app/**/*.js',
         'app/**/*.html',
         'test/**/*.js' // need to tell Karma to load the html files here for directives.
@@ -34,7 +34,7 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-        '**/*html': 'ng-html2js'
+        '**/*html': ['ng-html2js']
     },
 
 
