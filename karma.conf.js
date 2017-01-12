@@ -22,7 +22,7 @@ module.exports = function(config) {
         'app/lib/angular/angular-*.js',
         'app/**/*.js',
         'app/**/*.html',
-        'test/**/*.js' // need to tell Karma to load the html files here for directives.
+        'tests/**/*.js' // need to tell Karma to load the html files here for directives.
     ],
 
 
