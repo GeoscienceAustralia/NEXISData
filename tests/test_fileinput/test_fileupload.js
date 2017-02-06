@@ -6,6 +6,9 @@ describe('Unit: fileupload directive', function()
     // The fileupload directive element created to the test.
     var fileElement;
 
+    // The isolated scope of the directive.
+    var directiveScope;
+
     // Include all the required modules.
     beforeEach(module('nexisDataApp'));
     beforeEach(module('app/fileupload/fileupload.html'));
@@ -18,12 +21,11 @@ describe('Unit: fileupload directive', function()
         var scope = $rootScope.$new();
 
         // Initialise the values needed for the scope here.
-
-        // Compile the test directive as a DOM object so that it can be tested on.
+        //scope.variable = value.
 
         // Create a DOM fileupload directive element
         // Add in the tag within the angular element function.
-        fileElement = angular.element("<file-upload>");
+        fileElement = angular.element("<file-upload file-object=\"testValue\">");
 
         // Compile the directive with the scope so that the directive has
         // access to it.
@@ -36,6 +38,8 @@ describe('Unit: fileupload directive', function()
         // For debugging purposes, print out the HTML code of the compiled and
         // binded directive.
         console.log(fileElement[0].outerHTML);
+
+        directiveScope = fileElement.isolateScope();
     }));
 
 
@@ -52,8 +56,22 @@ describe('Unit: fileupload directive', function()
         expect(found).toBeTruthy();
     });
 
-    // Want to check that the filename loaded up in the button is the same as
-    // what is shown in the text field.
+    // Test 3: Check that the file is correctly bound to the scope variable.
+    it('Binds file DOM object to variable', function(){
+        var fileDOM = getHTMLElementByID(fileElement.find("input"),
+            'file-input');
+        expect(directiveScope.fileObject).toEqual(fileDOM);
+    });
+
+    // Test 4: Check the filename selected is filled out in the text field.
+    // Want to get the values of the filepath from both the string and text.
+    it('Displays filepath in text correctly', function(){
+        var fileDOM = getHTMLElementByID(fileElement.find("input"),
+            'file-input');
+        var textDOM = getHTMLElementByID(fileElement.find("input"),
+            'file-text');
+    });
+
 
     // (Optional) Want to check that the text field is populated with the default
     // value that is passed in.
@@ -69,8 +87,7 @@ describe('Unit: fileupload directive', function()
     // element of the given type, returns false otherwise.
     function inputElementContainsType(inputElements, type)
     {
-        // Go through the list of tags and see whether the id='file-input'
-        // exists.
+        // Go through the list of tags and see whether the type exists.
         var foundFileType = false;
         for (var i = 0, length = inputElements.length;
              i < length && !foundFileType; i++)
@@ -78,8 +95,24 @@ describe('Unit: fileupload directive', function()
             if (inputElements[i].type === type)
             {
                 foundFileType = true;
+                break;
             }
         }
         return foundFileType;
+    }
+
+    // Returns the HTML element from the list of DOM elemtns that matches the
+    // given ID
+    function getHTMLElementByID(inputElements, id)
+    {
+        // Go through the list of tags and see whether the type exists
+        for (var i = 0, length = inputElements.length;
+             i < length; i++)
+        {
+            if (inputElements[i].id === id)
+            {
+                return inputElements[i];
+            }
+        }
     }
 });
