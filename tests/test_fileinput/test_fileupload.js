@@ -22,7 +22,7 @@ describe('Unit: fileupload directive', function()
 
         // Create a DOM fileupload directive element
         // Add in the tag within the angular element function.
-        fileElement = angular.element("<file-upload file-object=\"testObject\" filepath-text=\"testPath\" ext-pattern=\".zip\"/>");
+        fileElement = angular.element("<file-upload file-object=\"testObject\" filepath-text=\"testPath\" ext-pattern=\".zip\" text-pattern=\"/^(.*\.(?!(zip)$))?[^.]*$/i\" />");
 
         // Compile the directive with the scope so that the directive has
         // access to it.
@@ -60,16 +60,21 @@ describe('Unit: fileupload directive', function()
         expect(directiveScope.fileObject).toBe(fileDOM);
     });
 
-    // Test 4: Check passed in file pattern is set on input file element.
-    it('Bind ng-pattern to input file element correctly', function(){
+    // Test 4: Check passed in ext pattern is set on input file element.
+    it('Bind accept to input file element correctly', function(){
         var fileDOM = getHTMLElementByID(fileElement.find("input"),
             'file-input');
         var patternVal = angular.element(fileDOM).attr('accept');
         expect(patternVal).toEqual(".zip");
     });
 
-    // Want to check the observe/file changed function is called when the
-    // filename is changed.
+    // Test 5: Check passed in text pattern is set on input file element.
+    it('Bind ng-pattern to input file element correctly', function(){
+        var fileDOM = getHTMLElementByID(fileElement.find("input"),
+            'file-input');
+        var patternVal = angular.element(fileDOM).attr('ng-pattern');
+        expect(patternVal).toEqual("/^(.*\.(?!(zip)$))?[^.]*$/i");
+    });
 
     // Determines whether an input HTML element from a list of input HTML
     // elements is of a particular type. Returns true if there is any input

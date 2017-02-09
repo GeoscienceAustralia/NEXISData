@@ -9,7 +9,8 @@ nexisDataApp.directive('fileUpload', function() {
         scope: {
             fileObject: '=',
             filepathText: '=',
-            extPattern: '@'
+            extPattern: '@',
+            textPattern: '@'
         },
         link: function(scope, element, attrs, controller){
             scope.fileObject = element.find('input')[0];
