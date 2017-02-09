@@ -2,6 +2,6 @@
     <label for="file-input">
         <img src="http://goo.gl/pB9rpQ"/>
     </label>
-    <input id="file-input" type="file" required accept="{{filePattern}}" ng-pattern="{{pattern}}" ng-model="file"/>
-    <input id="file-text" type="text" value="{{file}}" class="field left" readonly/>
+    <input id="file-input" type="file" required accept="{{extPattern}}" ng-pattern={{pattern}} />
+    <input id="file-text" type="text" value={{file-text}} class="field left" readonly />
 </div>

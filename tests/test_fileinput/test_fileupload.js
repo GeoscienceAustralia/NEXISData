@@ -20,12 +20,9 @@ describe('Unit: fileupload directive', function()
         // Create a root scope for the tests.
         var scope = $rootScope.$new();
 
-        // Initialise the values needed for the scope here.
-        //scope.variable = value.
-
         // Create a DOM fileupload directive element
         // Add in the tag within the angular element function.
-        fileElement = angular.element("<file-upload file-object=\"testValue\">");
+        fileElement = angular.element("<file-upload file-object=\"testObject\" filepath-text=\"testPath\" ext-pattern=\".zip\"/>");
 
         // Compile the directive with the scope so that the directive has
         // access to it.
@@ -35,11 +32,11 @@ describe('Unit: fileupload directive', function()
         // test fileupload directive element.
         scope.$digest();
 
+        directiveScope = fileElement.isolateScope();
+
         // For debugging purposes, print out the HTML code of the compiled and
         // binded directive.
         console.log(fileElement[0].outerHTML);
-
-        directiveScope = fileElement.isolateScope();
     }));
 
 
@@ -60,24 +57,16 @@ describe('Unit: fileupload directive', function()
     it('Binds file DOM object to variable', function(){
         var fileDOM = getHTMLElementByID(fileElement.find("input"),
             'file-input');
-        expect(directiveScope.fileObject).toEqual(fileDOM);
+        expect(directiveScope.fileObject).toBe(fileDOM);
     });
 
-    // Test 4: Check the filename selected is filled out in the text field.
-    // Want to get the values of the filepath from both the string and text.
-    it('Displays filepath in text correctly', function(){
+    // Test 4: Check passed in file pattern is set on input file element.
+    it('Bind ng-pattern to input file element correctly', function(){
         var fileDOM = getHTMLElementByID(fileElement.find("input"),
             'file-input');
-        var textDOM = getHTMLElementByID(fileElement.find("input"),
-            'file-text');
+        var patternVal = angular.element(fileDOM).attr('accept');
+        expect(patternVal).toEqual(".zip");
     });
-
-
-    // (Optional) Want to check that the text field is populated with the default
-    // value that is passed in.
-
-    // Want to check that the filter works, in that only files matching the
-    // extension pattern are allowed to be loaded.
 
     // Want to check the observe/file changed function is called when the
     // filename is changed.
