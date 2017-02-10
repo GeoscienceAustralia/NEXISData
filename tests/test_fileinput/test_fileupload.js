@@ -10,7 +10,7 @@ describe('Unit: fileupload directive', function()
     var directiveScope;
 
     // Include all the required modules.
-    beforeEach(module('nexisDataApp'));
+    beforeEach(module('ga-nexis-ui.file-upload'));
     beforeEach(module('app/fileupload/fileupload.html'));
 
     // For directives, create a compiled template fileupload directive to
