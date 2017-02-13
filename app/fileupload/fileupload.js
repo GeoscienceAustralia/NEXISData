@@ -1,6 +1,6 @@
 'use strict';
 
-(function(){
+(function(angular){
     angular.module('ga-nexis-ui.file-upload', [])
         .directive('fileUpload', fileUpload);
 
@@ -8,7 +8,7 @@
         return {
             restrict: 'E',
             replace: true,
-            templateUrl: 'app/fileupload/fileupload.html',
+            templateUrl: 'fileupload/fileupload.html',
             transclude: true,
             scope: {
                 fileObject: '=',
@@ -39,4 +39,4 @@
             }
         }
     }
-})();
+})(angular);
