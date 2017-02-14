@@ -12,7 +12,6 @@
             transclude: true,
             scope: {
                 fileObject: '=',
-                filepathText: '=',
                 extPattern: '@',
                 textPattern: '@'
             },
@@ -24,6 +23,10 @@
     {
         scope.fileObject = element.find('input')[0];
 
+        // This has been commented out because this code is used for assigning
+        // the file path as a text. This will be needed if this directive gets
+        // to the state where an image button can be assigned.
+        /*
         // Update the file path when the file value has changed.
         attrs.$observe('file-object', fileValueChanged);
 
@@ -38,5 +41,6 @@
                 }
             }
         }
+        */
     }
 })(angular);

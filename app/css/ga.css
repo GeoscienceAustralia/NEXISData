@@ -1430,41 +1430,34 @@
     top: auto;
 }
 
-.button[type=submit] {
-    background-color: #006983;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: left;
-    text-decoration: none;
-    font-size: 13px;
-    font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
-    font-weight: bold;
-}
-
-.button[type=submit]:hover {
+.btn-primary:hover, .btn-primary:active {
+    border: 1px solid #a33f1f;
     background-color: #a33f1f;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: left;
-    text-decoration: none;
-    font-size: 13px;
+    color: #ffffff;
+    border-radius: 4px;
+    padding: 19px 24px;
     font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+    font-size: 13px;
     font-weight: bold;
 }
 
-input[type="file"] {
-    display: none;
+.btn-primary {
+    border: 1px solid #006983;
+    background-color: #006983;
+    color: #ffffff;
+    border-radius: 4px;
+    padding: 19px 24px;
+    font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
 }
 
 .custom-file-upload {
     background-color: #006983;
     border: none;
     color: white;
-    padding: 15px 32px;
-    text-align: left;
-    text-decoration: none;
+    padding: 19px 24px;
+    border-radius: 4px;
     font-size: 13px;
     font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
     font-weight: bold;

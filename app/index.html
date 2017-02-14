@@ -6,35 +6,21 @@
     <link rel="stylesheet" type="text/css" href="css/app.header.footer.css" />
     <link rel="stylesheet" type="text/css" href="css/ga.css" />
 </head>
-<body>
+<body ng-app="ga-nexis-ui">
     <h1 class="ga-header">Hello World</h1>
 
     <div style="padding-left:20px; padding-right: 20px">
         <p>
             I've been deployed automatically from Travis CI.
         </p>
-        <form name="fileUploadForm">
-            <div class="r">
-                <div class="span6">
-                    <label for="shapefile" class="custom-file-upload">
-                        <input id="shapefile"
-                               type="file"
-                               accept=".zip, application/zip, application/octet-stream"
-                               required
-                               ng-pattern="/^(.*\.(?!(zip)$))?[^.]*$/i">
-                        Select zipped shapefile
-                    </label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="span5 offset11">
-                    <button class="button"
-                            id="runButton"
-                            type="submit"
-                            ng-disabled="fileUploadForm.$invalid">Run</button>
-                </div>
-            </div>
+        <form class="form-load" name="fileUploadForm" ng-controller="fme-app-ctlr">
+            <file-upload file-object="fileUploadObject" ext-pattern=".zip, application/zip, application/octet-stream" text-pattern="/^(.*\.(?!(zip)$))?[^.]*$/i"></file-upload>
         </form>
     </div>
+
+<script src="../node_modules/angular/angular.js"></script>
+<script src="fileupload/fileupload.js"></script>
+<script src="fme/paramctlr.js"></script>
+<script src="app.js"></script>
 </body>
 </html>

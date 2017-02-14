@@ -22,7 +22,7 @@ describe('Unit: fileupload directive', function()
 
         // Create a DOM fileupload directive element
         // Add in the tag within the angular element function.
-        fileElement = angular.element("<file-upload file-object=\"testObject\" filepath-text=\"testPath\" ext-pattern=\".zip\" text-pattern=\"/^(.*\.(?!(zip)$))?[^.]*$/i\" />");
+        fileElement = angular.element("<file-upload file-object=\"testObject\" ext-pattern=\".zip\" text-pattern=\"/^(.*\.(?!(zip)$))?[^.]*$/i\" />");
 
         // Compile the directive with the scope so that the directive has
         // access to it.
