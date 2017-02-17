@@ -1,24 +1,33 @@
 language: node_js
+
 node_js:
 - 4
 - 5
 - node
+
 os:
 - linux
+
 sudo: false
+
 branches:
   only: master
-deploy:
-- provider: s3
-  bucket: nexis.et.web
-  access_key_id: "$AWS_ACCESS_KEY_ID"
-  secret_access_key: "$AWS_SECRET_ACCESS_KEY"
-  region: ap-southeast-2
-  local_dir: app
-  skip_cleanup: true
-  acl: public_read
+
 script:
 - npm test
+
+before_deploy:
+  # Use the AWS command line interface tool to deploy up to the S3 bucket.
+  pip install --user awscli
+  export PATH=$PATH:$HOME/.local/bin
+
+deploy:
+- provider: script
+  script: scripts/deploy.sh
+  skip_cleanup: true
+  on:
+    branch: master
+
 env:
   global:
   - secure: BFbtkLZ/pJhJb8BNre34c36hLp65dxZ/2pcG9gYaZ5H2susFbbnL1cdXcJ5TUVfx2FH9IAwp5kPercrl6h6eEOQQ3hBa54gkEr/IL8Qxqf1YyxfpcXHi1XmbKbefOG/jPnB2G1V3NfPr7zjsnS6kSbme28Hnl6fnmq35VXTn+iQM2g3tkiQ63K0O/NcvFJvMO/5yqajP/QZmD+jTVeeDjsk0+UYV5fgydcCmLq86hu2rUp9juQVVLxHjet6ZRhOuohfI1x7PUsbENLAXor/QWjkEf/iE7dEE3wyqAKSaoACkPb2EI1lvZ81JLLfPDLrQGfYTUIzPew3sSOAh+oZ1pk/1IWPVfnp3JPgp8aB/FhXZ9d0Z0al1/RdpXuhYIgefPlPWNHEpwgIs2c+aS3Sad8FAUrLFLsb84q7cw3pwy1OdILkqrQil5u3FO4mzRrPWJXW7uqrZQW9jNvxoHygL9JwEUCkS/9cF4A4C/q9FF9VEGGmITWqBQDNJ9YvlnekEE5e9hcRMl7kv4HbFqFGkhXbzkFQvan3j26S4hw60WS7K8mwrPwRA3PVYxqa/TjotcBk1NRgQc5liqWPE9/uMeEsvCqpUNg1GLXhMZqcA4i4yOWLUcuZUmanMVXsHwn9VePcnC3ZRRAMAmQNOrehD6gEmxTSHBM2CQw8BWAk/Rx4=
