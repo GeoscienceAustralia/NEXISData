@@ -16,9 +16,10 @@ branches:
 script:
 - npm test
 
-before_deploy:
+before_install:
   # Use the AWS command line interface tool to deploy up to the S3 bucket.
   - pip install --user awscli
+  - export PATH=$PATH:$HOME/.local/bin
 
 deploy:
 - provider: script
