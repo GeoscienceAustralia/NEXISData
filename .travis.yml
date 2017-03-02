@@ -16,17 +16,15 @@ branches:
 script:
 - npm test
 
-before_deploy:
-  # Use the AWS command line interface tool to deploy up to the S3 bucket.
-  - pip install --user awscli
-  - export PATH=$PATH:~/.local/bin
-
 deploy:
-- provider: script
-  script: /bin/sh scripts/deploy.sh
+- provider: s3
+  bucket: nexis-et-web
+  access_key_id: "$AWS_ACCESS_KEY_ID"
+  secret_access_key: "$AWS_SECRET_ACCESS_KEY"
+  region: ap-southeast-2
+  local_dir: app
   skip_cleanup: true
-  on:
-    branch: master
+  acl: public_read
 
 env:
   global:
