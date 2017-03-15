@@ -3,8 +3,7 @@
 (function (angular) {
 
     angular.module('ga-nexis-ui', [
-        'ga-nexis-ui.file-upload',
-        'ga-nexis-ui.fme-app-ctlr'
+        'ga-nexis-ui.file-upload'
     ]);
 
 })(angular);
